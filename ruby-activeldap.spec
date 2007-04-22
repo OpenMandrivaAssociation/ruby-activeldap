@@ -1,7 +1,7 @@
 %define rname activeldap
 %define name ruby-%{rname}
 %define version 0.7.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Object oriented interface to Ruby/LDAP
 Name: %{name}
@@ -10,15 +10,12 @@ Release: %{release}
 URL: http://dataspill.org/posts/show/4
 Source0: http://rubyforge.org/frs/download.php/1763/%{name}-%{version}.tar.bz2
 License: GPL
-Group: Development/Other
+Group: Development/Ruby
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: ruby >= 1.8.1
 Requires: ruby-ldap ruby-log4r
 BuildRequires: ruby-devel
 BuildArch: noarch
-
-%define ruby_libdir %(ruby -rrbconfig -e 'puts Config::CONFIG["sitelibdir"]')
-%define ruby_archdir %(ruby -rrbconfig -e 'puts Config::CONFIG["sitearchdir"]')
 
 %description
 Ruby/ActiveLDAP is an object-oriented interface to LDAP written in Ruby. It
@@ -42,7 +39,7 @@ rm -rf %buildroot
 %install
 rm -rf %buildroot
 ruby setup.rb install
-for f in `find %buildroot%{ruby_libdir} . -name \*.rb`
+for f in `find %buildroot%{ruby_sitelibdir} . -name \*.rb`
 do
         if head -n1 "$f" | grep '^#!' >/dev/null;
         then
@@ -55,6 +52,6 @@ done
 
 %files
 %defattr(-,root,root)
-%{ruby_libdir}/activeldap*
+%{ruby_sitelibdir}/activeldap*
 %doc COPYING README LICENSE CHANGES examples tests doc
 
