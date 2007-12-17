@@ -11,7 +11,6 @@ URL: http://dataspill.org/posts/show/4
 Source0: http://rubyforge.org/frs/download.php/1763/%{name}-%{version}.tar.bz2
 License: GPL
 Group: Development/Ruby
-BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: ruby >= 1.8.1
 Requires: ruby-ldap ruby-log4r
 BuildRequires: ruby-devel
