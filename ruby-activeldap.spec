@@ -1,7 +1,7 @@
 %define rname activeldap
 %define name ruby-%{rname}
 %define version 0.7.2
-%define release %mkrel 5
+%define release %mkrel 6
 
 Summary: Object oriented interface to Ruby/LDAP
 Name: %{name}
