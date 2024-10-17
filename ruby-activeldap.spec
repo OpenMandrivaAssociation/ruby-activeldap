@@ -4,7 +4,7 @@ Summary: Object oriented interface to Ruby/LDAP
 Name:    ruby-%{rname}
 Version: 0.7.2
 Release: 8
-URL: http://dataspill.org/posts/show/4
+URL: https://dataspill.org/posts/show/4
 Source0: http://rubyforge.org/frs/download.php/1763/%{name}-%{version}.tar.bz2
 License: GPL
 Group: Development/Ruby
